@@ -1,14 +1,17 @@
 import EmployeeComponent from '../components/employee';
 
+
 const dummyEmployees = [
   {
+    id: 1,
     name: 'Ophelia',
     pictureURL: 'https://image.pngaaa.com/879/2874879-middle.png',
     jobTitle: 'Senior Full Stack developer', 
     summary: 'best in her field', 
-    performance: '70'
+    performance: '90'
   },
   {
+    id: 2,
     name: 'Mayushi',
     pictureURL: 'https://www.pngkey.com/png/full/145-1450218_26-nier-sucks-imagenes-de-lolis-kawaii.png',
     jobTitle: 'Data scientist', 
@@ -24,7 +27,7 @@ export default function HomePage() {
         <div className='col-span-12 lg:col-span-3 bg-gray-800 rounded-sm'>Sidebar</div>
         <div className='col-span-12 lg:col-span-9 p-2 bg-gray-800 rounded-sm'>
           { 
-            dummyEmployees.map((data, i) => <EmployeeComponent {...data} key={i} />)
+            dummyEmployees.map(({ id, ...rest }) => <EmployeeComponent {...rest} key={id} />)
           }
         </div>
       </div>
