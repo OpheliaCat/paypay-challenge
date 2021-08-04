@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MdRateReview } from 'react-icons/md';
+import { IoMdLogIn } from 'react-icons/io';
 
 export default function LoginFormComponent() {
     const [username, setUsername] = useState("")
@@ -22,8 +22,11 @@ export default function LoginFormComponent() {
             />
             <button 
                 onClick={() => console.log({ username, password })}
-                className="block w-full mt-6 p-2 bg-green-600 text-white tracking-widest"
-            >Login</button>
+                className="flex justify-center w-full mt-6 p-2 bg-green-600 text-white tracking-widest"
+            >
+                <IoMdLogIn size="20" />
+                <span className='ml-1'>Login</span>
+            </button>
         </div>
         
     )
